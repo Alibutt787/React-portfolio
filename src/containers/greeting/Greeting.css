@@ -79,11 +79,22 @@
   .greeting-text-p {
     font-size: 20px;
   }
+  .greeting-text-p.typediv {
+    width: 600px;
+  }
 
   .greet-main {
     max-width: 900px;
   }
 }
+
+@media (min-width: 1240px) {
+  .typediv {
+    width: 600px;
+    height: 100px;
+  }
+}
+
 @media (max-width: 768px) {
   .button-greeting-div {
     justify-content: space-around;

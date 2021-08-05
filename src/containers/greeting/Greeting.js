@@ -1,4 +1,5 @@
 import React from "react";
+import Typewriter from "typewriter-effect";
 import "./Greeting.css";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import { greeting } from "../../portfolio";
@@ -33,7 +34,23 @@ export default function Greeting(props) {
                 <span style={{ color: theme.accentColor }}>
                   {greeting.full_name}.{" "}
                 </span>
-                {greeting.subTitle}
+                <div className="typediv">
+                  <Typewriter
+                    options={{
+                      strings: [
+                        `${greeting.subTitle} `,
+                        // "Deep Learning Engineer",
+                        // "MERN Stack Developer",
+                        // "Open Source Contributor",
+                      ],
+                      autoStart: true,
+                      loop: true,
+                      deleteSpeed: 50,
+                      color: "red",
+                    }}
+                  />
+                  <br />
+                </div>
               </p>
               <SocialMedia />
               <div className="portfolio-repo-btn-div">

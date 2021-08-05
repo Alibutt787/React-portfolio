@@ -9,14 +9,14 @@ import { settings } from "./portfolio";
 import ReactGA from "react-ga";
 
 function App() {
-  useEffect(() => {
-    if (settings.googleTrackingID) {
-      ReactGA.initialize(settings.googleTrackingID, {
-        testMode: process.env.NODE_ENV === "test",
-      });
-      ReactGA.pageview(window.location.pathname + window.location.search);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (settings.googleTrackingID) {
+  //     ReactGA.initialize(settings.googleTrackingID, {
+  //       testMode: process.env.NODE_ENV === "test",
+  //     });
+  //     ReactGA.pageview(window.location.pathname + window.location.search);
+  //   }
+  // }, []);
 
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
   const useCursor = settings.useCustomCursor;
@@ -26,7 +26,7 @@ function App() {
       <>
         <GlobalStyles />
         <div>
-          {useCursor ? (
+          {/* {useCursor ? (
             <CursorProvider
               color={themes[theme].secondaryText}
               ringSize={25}
@@ -36,7 +36,9 @@ function App() {
             </CursorProvider>
           ) : (
             <Main theme={themes[theme]} setTheme={setTheme} />
-          )}
+          )} */}
+
+          <Main theme={themes[theme]} setTheme={setTheme} />
         </div>
       </>
     </ThemeProvider>
